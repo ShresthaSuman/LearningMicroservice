@@ -22,8 +22,4 @@
       <PackageReference Include="Marten" Version="9.32.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Features\GetProductByCategory\" />
-    </ItemGroup>
-
 </Project>

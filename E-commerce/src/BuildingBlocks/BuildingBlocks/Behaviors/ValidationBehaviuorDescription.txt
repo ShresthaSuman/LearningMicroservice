@@ -1,0 +1,158 @@
+# ValidationBehavior Memo
+
+## Subject
+
+MediatR pipeline behavior for validating command requests with FluentValidation.
+
+## Purpose
+
+`ValidationBehavior<TRequest, TResponse>` centralizes request validation in one reusable component.
+
+Without this behavior, each command handler would need to contain its own validation logic. With it, validation runs automatically before the command handler executes.
+
+## When It Runs
+
+The request lifecycle is:
+
+1. A client sends JSON to an API endpoint.
+2. ASP.NET Core deserializes the JSON into a C# command object.
+3. MediatR passes the command through the pipeline.
+4. `ValidationBehavior` runs the registered validators.
+5. If validation succeeds, the command handler executes.
+6. If validation fails, a `ValidationException` is thrown and the handler is not called.
+
+## Class Definition
+
+```csharp
+public class ValidationBehavior<TRequest, TResponse>
+    : IPipelineBehavior<TRequest, TResponse>
+    where TRequest : ICommand<TResponse>
+```
+
+### Key points
+
+- `TRequest` represents the command type.
+- `TResponse` represents the command result type.
+- The generic design allows the behavior to work with many commands and responses.
+- `where TRequest : ICommand<TResponse>` limits this behavior to commands. Queries can be excluded from validation if the application registers the behavior conditionally.
+
+## Dependency Injection
+
+```csharp
+private readonly IEnumerable<IValidator<TRequest>> _validators;
+
+public ValidationBehavior(IEnumerable<IValidator<TRequest>> validators)
+{
+    _validators = validators;
+}
+```
+
+The dependency injection container provides every FluentValidation validator registered for the current command type.
+
+For example, if the request is `UpdateProductCommand`, the behavior receives all validators implementing:
+
+```csharp
+IValidator<UpdateProductCommand>
+```
+
+## Handle Method
+
+```csharp
+public async Task<TResponse> Handle(
+    TRequest request,
+    RequestHandlerDelegate<TResponse> next,
+    CancellationToken cancellationToken)
+```
+
+### Parameters
+
+- `request`: The deserialized command object.
+- `next`: A delegate that invokes the next pipeline step, normally the command handler.
+- `cancellationToken`: A token used to cancel validation when the request is aborted.
+
+## Processing Steps
+
+### 1. Skip validation when no validators exist
+
+```csharp
+if (!_validators.Any())
+{
+    return await next();
+}
+```
+
+If no validator is registered for the command, the behavior immediately continues to the handler.
+
+### 2. Create a validation context
+
+```csharp
+var context = new ValidationContext<TRequest>(request);
+```
+
+FluentValidation uses this context to evaluate rules against the current command.
+
+### 3. Execute the validators
+
+```csharp
+var validationResults = await Task.WhenAll(
+    _validators.Select(v => v.ValidateAsync(context, cancellationToken)));
+```
+
+Each validator is executed asynchronously, and `Task.WhenAll` waits for all validator tasks to complete.
+
+This is useful when multiple validators perform independent asynchronous operations. It should not be interpreted as a guarantee that every individual property rule runs in parallel.
+
+### 4. Collect validation failures
+
+```csharp
+var failures = validationResults
+    .SelectMany(result => result.Errors)
+    .Where(failure => failure != null)
+    .ToList();
+```
+
+Each validator returns its own collection of errors. `SelectMany` combines those collections into one list.
+
+### 5. Stop processing when validation fails
+
+```csharp
+if (failures.Count != 0)
+{
+    throw new ValidationException(failures);
+}
+```
+
+If at least one rule fails, a `ValidationException` is thrown. The command handler is not executed, preventing invalid data from reaching the database or other application services.
+
+### 6. Continue when validation succeeds
+
+```csharp
+return await next();
+```
+
+When no failures are found, the request continues to the command handler.
+
+## Handling Large JSON Requests
+
+The behavior validates the already-deserialized C# object. ASP.NET Core normally reads and deserializes the request body before MediatR receives the command.
+
+For large requests:
+
+- Validation cost generally grows with the number and complexity of the rules.
+- Simple property checks are usually inexpensive.
+- Asynchronous rules may perform database or external-service calls and can be more expensive.
+- Request size limits, streaming, and memory usage are primarily managed by ASP.NET Core configuration, not by this pipeline behavior.
+
+## Summary
+
+`ValidationBehavior` provides a single validation checkpoint for commands:
+
+```text
+API request
+    -> JSON deserialization
+    -> MediatR pipeline
+    -> FluentValidation
+    -> ValidationException, or command handler
+```
+
+The result is cleaner handlers, consistent validation, and an automatic safeguard against invalid command data.

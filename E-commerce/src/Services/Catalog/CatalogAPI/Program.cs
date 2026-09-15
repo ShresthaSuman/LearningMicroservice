@@ -1,13 +1,20 @@
-using Carter;
-using Marten;
+
+
+using System.Net.Mime;
+using Microsoft.AspNetCore.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
+var assembly = typeof(Program).Assembly;
+
 builder.Services.AddCarter();
+
 builder.Services.AddMediatR(cfg =>
 {
     //builder.Services.AddMediatR(cfg => ...); uses cfg because MediatR must know
     //where your handlers are hidden to route your commands correctly.
-    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    cfg.RegisterServicesFromAssembly(assembly);
+    cfg.AddOpenBehavior(typeof(ValidationBehavior<,>));
+    cfg.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
 builder.Services.AddMarten(opts =>
@@ -15,19 +22,14 @@ builder.Services.AddMarten(opts =>
     opts.Connection(builder.Configuration.GetConnectionString("Database")!);
 }).UseLightweightSessions();
 
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-            .AllowAnyHeader()
-            .WithMethods("GET", "POST", "PUT", "DELETE"); // Make sure PUT is here!
-    });
-});
+builder.Services.AddValidatorsFromAssembly(assembly);
+
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
-
+app.UseHealthChecks("/health");
 app.MapCarter();
+
 app.Run();
