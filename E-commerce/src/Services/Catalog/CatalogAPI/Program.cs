@@ -28,7 +28,7 @@ builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+//app.MapGet("/", () => "Hello World!");
 app.UseHealthChecks("/health");
 app.MapCarter();
 
