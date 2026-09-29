@@ -1,0 +1,56 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  basket-api:
+    build:
+      context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
+      dockerfile: "Services/Basket/BasketAPI/BasketAPI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/BasketAPI.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "basketapi:dev"
+    ports: []
+    volumes:
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI:/app:rw"
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
+    - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  catalog-api:
+    build:
+      context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
+      dockerfile: "Services/Catalog/CatalogAPI/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/CatalogAPI.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "catalogapi:dev"
+    ports: []
+    volumes:
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI:/app:rw"
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
+    - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
+  discount-gRPC:
+    build:
+      context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
+      dockerfile: "Services/Discount/Discount.gRPC/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/Discount.gRPC.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "discount.grpc:dev"
+    ports: []
+    volumes:
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Discount/Discount.gRPC:/app:rw"
+    - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
+    - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"

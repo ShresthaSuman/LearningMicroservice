@@ -1,0 +1,13 @@
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/bin/Debug/net10.0/Ordering.Domain.deps.json
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/bin/Debug/net10.0/Ordering.Domain.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/bin/Debug/net10.0/Ordering.Domain.pdb
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.AssemblyInfoInputs.cache
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.AssemblyInfo.cs
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.csproj.CoreCompileInputs.cache
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.sourcelink.json
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/refint/Ordering.Domain.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.pdb
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/ref/Ordering.Domain.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Ordering/Ordering.Domain/obj/Debug/net10.0/Ordering.Domain.csproj.AssemblyReference.cache
