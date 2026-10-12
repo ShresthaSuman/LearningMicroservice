@@ -36,7 +36,24 @@
     ports:
       - "6379:6379"
     restart: always
-
+  
+  
+  order-db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    platform: linux/amd64   # ← suppresses the warning, enables Rosetta
+    container_name: orderdb
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=admin1234$#
+      - MSSQL_PID=Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - orderdb_data:/var/opt/mssql
+    
+    
+    
   catalog-api:
 #    image: ${DOCKER_REGISTRY-}catalog-api:latest
     build:
@@ -112,3 +129,4 @@
 volumes:
     postgres_catalog:
     postgres_basket:
+    orderdb_data:

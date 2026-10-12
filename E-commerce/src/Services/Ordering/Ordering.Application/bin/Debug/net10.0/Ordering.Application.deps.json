@@ -9,6 +9,7 @@
       "Ordering.Application/1.0.0": {
         "dependencies": {
           "BuildingBlocks": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "10.0.12",
           "Ordering.Domain": "1.0.0"
         },
         "runtime": {
@@ -460,6 +461,9 @@
         }
       },
       "Ordering.Domain/1.0.0": {
+        "dependencies": {
+          "MediatR": "14.2.0"
+        },
         "runtime": {
           "Ordering.Domain.dll": {
             "assemblyVersion": "1.0.0.0",

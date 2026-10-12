@@ -12,7 +12,7 @@ public record OrderId
         ArgumentNullException.ThrowIfNull(value);
         if (value == Guid.Empty)
         {
-            throw new DomainException("CustomerId is empty");
+            throw new DomainException("OrderID is empty");
         }
 
         return new OrderId(value);

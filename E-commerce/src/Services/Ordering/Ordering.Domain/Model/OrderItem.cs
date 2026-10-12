@@ -6,7 +6,7 @@ namespace Ordering.Domain.Model;
 public class OrderItem : Entity<OrderItemId>
 {
     
-    public OrderItemId OrderItemId { get; private set; }
+  
     public OrderId OrderId { get; private set; } = default!;
     public ProductId ProductId { get; private set; } = default!;
     public int Quantity { get; private set; } = default!;
@@ -14,7 +14,7 @@ public class OrderItem : Entity<OrderItemId>
 
     internal OrderItem(OrderId orderId, ProductId productId, int quantity, decimal price)
     {
-        OrderItemId = OrderItemId.Of(Guid.NewGuid());
+        Id = OrderItemId.Of(Guid.NewGuid()); // this Id is Entity Id from IEntity. Dont be confuse on whee this Id came from
         OrderId = orderId;
         ProductId = productId;
         Quantity = quantity;

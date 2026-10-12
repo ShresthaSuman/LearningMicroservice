@@ -23,6 +23,10 @@ public class Order : Aggregate<OrderId>
       private set { }
    }
 
+   public Order()
+   {
+      
+   }
    public static Order Create(OrderId id, CustomerId customerId, OrderName orderName, Address shippingAddress,
       Address billingAddress, Payment payment)
    {
@@ -61,4 +65,12 @@ public class Order : Aggregate<OrderId>
    }
    
    //remove method 
+   public void Remove(ProductId productId)
+   {
+      var orderItem = _orderItems.FirstOrDefault(x => x.ProductId == productId);
+      if (orderItem is not null)
+      {
+         _orderItems.Remove(orderItem);
+      }
+   }
 }
