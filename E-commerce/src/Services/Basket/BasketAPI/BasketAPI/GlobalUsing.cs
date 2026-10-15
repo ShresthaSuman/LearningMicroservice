@@ -11,6 +11,7 @@ global using BuildingBlocks.Behaviors;
 global using BasketAPI.Exception;
 global using Marten;
 
+global using BasketAPI.Dtos;
 public class GlobalUsing
 {
     

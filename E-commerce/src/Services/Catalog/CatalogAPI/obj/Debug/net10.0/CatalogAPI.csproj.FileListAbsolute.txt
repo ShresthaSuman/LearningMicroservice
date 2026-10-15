@@ -122,3 +122,5 @@
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI/obj/Debug/net10.0/CatalogAPI.pdb
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI/obj/Debug/net10.0/CatalogAPI.genruntimeconfig.cache
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI/obj/Debug/net10.0/ref/CatalogAPI.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI/bin/Debug/net10.0/Microsoft.FeatureManagement.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI/bin/Debug/net10.0/Microsoft.FeatureManagement.AspNetCore.dll

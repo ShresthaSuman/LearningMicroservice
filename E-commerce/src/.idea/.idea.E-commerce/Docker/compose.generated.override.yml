@@ -5,97 +5,52 @@ services:
       context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
       dockerfile: "Services/Basket/BasketAPI/BasketAPI/Dockerfile"
       target: "base"
-      args:
-        BUILD_CONFIGURATION: "Debug"
     command: []
     entrypoint:
-    - "/opt/JetBrains/RiderDebuggerTools/linux-arm64/JetBrains.Debugger.Worker"
-    - "--runtimeconfig"
-    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
-    - "--mode=server"
-    - "--frontend-port=57000"
-    - "--backend-port=57200"
-    - "--roslyn-worker-port=57400"
-    - "--timeout=60"
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/BasketAPI.dll"
     environment:
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
-      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
     image: "basketapi:dev"
-    ports:
-    - "127.0.0.1:57000:57000"
-    - "127.0.0.1:57200:57200"
-    - "127.0.0.1:57400:57400"
+    ports: []
     volumes:
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI:/app:rw"
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
     - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
-    - "/Users/shrestha/.local/share/JetBrains/RiderRemoteDebugger/2026.2.1/LinuxArm64:/opt/JetBrains/RiderDebuggerTools"
-    - "/Users/shrestha/Library/Logs/JetBrains/Rider2026.2/DebuggerWorker/JetBrains.Debugger.Worker.2026_10_05_23_19_55:/var/opt/JetBrains/RiderDebuggerTools:rw"
     working_dir: "/app"
   catalog-api:
     build:
       context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
       dockerfile: "Services/Catalog/CatalogAPI/Dockerfile"
       target: "base"
-      args:
-        BUILD_CONFIGURATION: "Debug"
     command: []
     entrypoint:
-    - "/opt/JetBrains/RiderDebuggerTools/linux-arm64/JetBrains.Debugger.Worker"
-    - "--runtimeconfig"
-    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
-    - "--mode=server"
-    - "--frontend-port=57000"
-    - "--backend-port=57200"
-    - "--roslyn-worker-port=57401"
-    - "--timeout=60"
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/CatalogAPI.dll"
     environment:
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
-      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
     image: "catalogapi:dev"
-    ports:
-    - "127.0.0.1:57001:57000"
-    - "127.0.0.1:57201:57200"
-    - "127.0.0.1:57401:57401"
+    ports: []
     volumes:
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Catalog/CatalogAPI:/app:rw"
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
     - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
-    - "/Users/shrestha/.local/share/JetBrains/RiderRemoteDebugger/2026.2.1/LinuxArm64:/opt/JetBrains/RiderDebuggerTools"
-    - "/Users/shrestha/Library/Logs/JetBrains/Rider2026.2/DebuggerWorker/JetBrains.Debugger.Worker.2026_10_05_23_19_55:/var/opt/JetBrains/RiderDebuggerTools:rw"
     working_dir: "/app"
   discount-gRPC:
     build:
       context: "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src"
       dockerfile: "Services/Discount/Discount.gRPC/Dockerfile"
       target: "base"
-      args:
-        BUILD_CONFIGURATION: "Debug"
     command: []
     entrypoint:
-    - "/opt/JetBrains/RiderDebuggerTools/linux-arm64/JetBrains.Debugger.Worker"
-    - "--runtimeconfig"
-    - "/opt/JetBrains/RiderDebuggerTools/JetBrains.Debugger.Worker.runtimeconfig.json"
-    - "--mode=server"
-    - "--frontend-port=57000"
-    - "--backend-port=57200"
-    - "--roslyn-worker-port=57402"
-    - "--timeout=60"
+    - "dotnet"
+    - "/app/bin/Debug/net10.0/Discount.gRPC.dll"
     environment:
       DOTNET_USE_POLLING_FILE_WATCHER: "true"
-      RIDER_DEBUGGER_LOG_DIR: "/var/opt/JetBrains/RiderDebuggerTools"
-      RESHARPER_LOG_CONF: "/etc/opt/JetBrains/RiderDebuggerTools/backend-log.xml"
     image: "discount.grpc:dev"
-    ports:
-    - "127.0.0.1:57002:57000"
-    - "127.0.0.1:57202:57200"
-    - "127.0.0.1:57402:57402"
+    ports: []
     volumes:
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Discount/Discount.gRPC:/app:rw"
     - "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src:/src:rw"
     - "/Users/shrestha/.nuget/packages:/home/app/.nuget/packages"
-    - "/Users/shrestha/.local/share/JetBrains/RiderRemoteDebugger/2026.2.1/LinuxArm64:/opt/JetBrains/RiderDebuggerTools"
-    - "/Users/shrestha/Library/Logs/JetBrains/Rider2026.2/DebuggerWorker/JetBrains.Debugger.Worker.2026_10_05_23_19_55:/var/opt/JetBrains/RiderDebuggerTools:rw"
     working_dir: "/app"

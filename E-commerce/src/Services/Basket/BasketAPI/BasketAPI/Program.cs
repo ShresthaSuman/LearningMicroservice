@@ -1,5 +1,6 @@
 
 using BasketAPI.Data;
+using BuildingBlocks.Messaging.MassTransit;
 using Discount.gRPC;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -28,6 +29,11 @@ builder.Services.AddStackExchangeRedisCache(opt =>
     opt.Configuration = builder.Configuration.GetConnectionString("Redis");
 });
 
+//async comminication Services
+builder.Services.AddMessageBroker(builder.Configuration);
+
+
+//cross-cutting concerns
 //adding health checkup service
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Database")!, name: "BasketAPI")

@@ -114,6 +114,37 @@
           }
         }
       },
+      "MassTransit/8.5.12-develop.2445": {
+        "dependencies": {
+          "MassTransit.Abstractions": "8.5.12-develop.2445"
+        },
+        "runtime": {
+          "lib/net10.0/MassTransit.dll": {
+            "assemblyVersion": "8.5.12.0",
+            "fileVersion": "8.5.12.0"
+          }
+        }
+      },
+      "MassTransit.Abstractions/8.5.12-develop.2445": {
+        "runtime": {
+          "lib/net10.0/MassTransit.Abstractions.dll": {
+            "assemblyVersion": "8.5.12.0",
+            "fileVersion": "8.5.12.0"
+          }
+        }
+      },
+      "MassTransit.RabbitMQ/8.5.12-develop.2445": {
+        "dependencies": {
+          "MassTransit": "8.5.12-develop.2445",
+          "RabbitMQ.Client": "7.2.2"
+        },
+        "runtime": {
+          "lib/net10.0/MassTransit.RabbitMqTransport.dll": {
+            "assemblyVersion": "8.5.12.0",
+            "fileVersion": "8.5.12.0"
+          }
+        }
+      },
       "MediatR/14.2.0": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
@@ -618,6 +649,25 @@
           }
         }
       },
+      "Microsoft.FeatureManagement/4.8.0": {
+        "runtime": {
+          "lib/net10.0/Microsoft.FeatureManagement.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Microsoft.FeatureManagement.AspNetCore/4.8.0": {
+        "dependencies": {
+          "Microsoft.FeatureManagement": "4.8.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FeatureManagement.AspNetCore.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
       "Microsoft.Identity.Client/4.84.2": {
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "8.14.0"
@@ -789,6 +839,14 @@
           "lib/net6.0/Newtonsoft.Json.dll": {
             "assemblyVersion": "13.0.0.0",
             "fileVersion": "13.0.4.30916"
+          }
+        }
+      },
+      "RabbitMQ.Client/7.2.2": {
+        "runtime": {
+          "lib/net8.0/RabbitMQ.Client.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.2.0"
           }
         }
       },
@@ -1060,7 +1118,8 @@
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Mapster": "10.1.0-pre02",
           "MediatR": "14.2.0",
-          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.12"
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.12",
+          "Microsoft.FeatureManagement.AspNetCore": "4.8.0"
         },
         "runtime": {
           "BuildingBlocks.dll": {
@@ -1069,9 +1128,21 @@
           }
         }
       },
+      "BuildingBlocks.Messaging/1.0.0": {
+        "dependencies": {
+          "MassTransit.RabbitMQ": "8.5.12-develop.2445"
+        },
+        "runtime": {
+          "BuildingBlocks.Messaging.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Ordering.Application/1.0.0": {
         "dependencies": {
           "BuildingBlocks": "1.0.0",
+          "BuildingBlocks.Messaging": "1.0.0",
           "Microsoft.EntityFrameworkCore": "10.0.12",
           "Ordering.Domain": "1.0.0"
         },
@@ -1175,6 +1246,27 @@
       "sha512": "sha512-1rHZUDfFFCLYApiBNwqzmY6ZzyTbPidH35NTPx46iN5LipV1DfZ9mksg2M6dubltuSsY52N7eWeoHx8BfCJt1g==",
       "path": "mapster.core/10.1.0-pre02",
       "hashPath": "mapster.core.10.1.0-pre02.nupkg.sha512"
+    },
+    "MassTransit/8.5.12-develop.2445": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DB10xCRvLEY4DvWDplkmggR10nhBsIP/5Z5rQnnqdkPvOzWz0qQbRi2zJy/9qO2WqX3CFC9ctT7EXwjWC1cPUQ==",
+      "path": "masstransit/8.5.12-develop.2445",
+      "hashPath": "masstransit.8.5.12-develop.2445.nupkg.sha512"
+    },
+    "MassTransit.Abstractions/8.5.12-develop.2445": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HBW19ktpAgmM+liQNkXvODgbsueplslr44ZK4Y9qf5KG2sPVvIArdxPb8v8P4CCRjFgi7y5Cw5CzCUa9PMqn4A==",
+      "path": "masstransit.abstractions/8.5.12-develop.2445",
+      "hashPath": "masstransit.abstractions.8.5.12-develop.2445.nupkg.sha512"
+    },
+    "MassTransit.RabbitMQ/8.5.12-develop.2445": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wQ2rZadxPNCM+f9rJGgE+rW1rCBxqp58vmuyNaMItq5jhKPp2TQNivWP6lsIZshjGtN8sZdpnWm6G9SVbtRLLQ==",
+      "path": "masstransit.rabbitmq/8.5.12-develop.2445",
+      "hashPath": "masstransit.rabbitmq.8.5.12-develop.2445.nupkg.sha512"
     },
     "MediatR/14.2.0": {
       "type": "package",
@@ -1316,6 +1408,20 @@
       "path": "microsoft.extensions.dependencymodel/10.0.12",
       "hashPath": "microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512"
     },
+    "Microsoft.FeatureManagement/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p1dzpXano+DTet2/hQGb+J91QonETabPYmO5BdqpsWOPq2C3WsWbm1BICTNlWqL81EVGrRrjpQh9mRNX55ZKmQ==",
+      "path": "microsoft.featuremanagement/4.8.0",
+      "hashPath": "microsoft.featuremanagement.4.8.0.nupkg.sha512"
+    },
+    "Microsoft.FeatureManagement.AspNetCore/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LBKVCjgNvJYtIiKb1IoXyuyzpZPmfVxnlDB0ByZ774EB1hNQLQlMQ9juZpJ3fRgEYodYs7aa7WKVvWshHx1CbQ==",
+      "path": "microsoft.featuremanagement.aspnetcore/4.8.0",
+      "hashPath": "microsoft.featuremanagement.aspnetcore.4.8.0.nupkg.sha512"
+    },
     "Microsoft.Identity.Client/4.84.2": {
       "type": "package",
       "serviceable": true,
@@ -1413,6 +1519,13 @@
       "sha512": "sha512-pdgNNMai3zv51W5aq268sujXUyx7SNdE2bj1wZcWjAQrKMFZV260lbqYop1d2GM67JI1huLRwxo9ZqnfF/lC6A==",
       "path": "newtonsoft.json/13.0.4",
       "hashPath": "newtonsoft.json.13.0.4.nupkg.sha512"
+    },
+    "RabbitMQ.Client/7.2.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k4b6RnTXpLbsF96V93ooNYxgPMnoA2tEm24B6AXNJr1mG8wwNYdA1XJtgU66L5xqeGyveS7SJriRzlX3cbqQNA==",
+      "path": "rabbitmq.client/7.2.2",
+      "hashPath": "rabbitmq.client.7.2.2.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.12": {
       "type": "package",
@@ -1527,6 +1640,11 @@
       "hashPath": "system.security.cryptography.protecteddata.9.0.11.nupkg.sha512"
     },
     "BuildingBlocks/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BuildingBlocks.Messaging/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -143,3 +143,11 @@
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/obj/Debug/net10.0/BasketAPI.pdb
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/obj/Debug/net10.0/BasketAPI.genruntimeconfig.cache
 /Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/obj/Debug/net10.0/ref/BasketAPI.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/MassTransit.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/MassTransit.Abstractions.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/MassTransit.RabbitMqTransport.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/RabbitMQ.Client.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/BuildingBlocks.Messaging.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/BuildingBlocks.Messaging.pdb
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/Microsoft.FeatureManagement.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/Services/Basket/BasketAPI/BasketAPI/bin/Debug/net10.0/Microsoft.FeatureManagement.AspNetCore.dll

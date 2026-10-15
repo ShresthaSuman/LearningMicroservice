@@ -52,6 +52,18 @@
     volumes:
       - orderdb_data:/var/opt/mssql
     
+  
+  messagebroker:
+    image: rabbitmq:management
+    container_name: rabbitmq-messagebroker
+    restart: always
+    hostname: ecommerce-mq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
     
     
   catalog-api:
@@ -126,6 +138,8 @@
       - ${HOME}/.microsoft/usersecrets:/home/app/.microsoft/usersecrets:ro
       - ${HOME}/.aspnet/https:/home/app/.aspnet/https:ro
     restart: always
+    
+  
 volumes:
     postgres_catalog:
     postgres_basket:

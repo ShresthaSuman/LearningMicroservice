@@ -356,6 +356,25 @@
           }
         }
       },
+      "Microsoft.FeatureManagement/4.8.0": {
+        "runtime": {
+          "lib/net10.0/Microsoft.FeatureManagement.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
+      "Microsoft.FeatureManagement.AspNetCore/4.8.0": {
+        "dependencies": {
+          "Microsoft.FeatureManagement": "4.8.0"
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.FeatureManagement.AspNetCore.dll": {
+            "assemblyVersion": "4.8.0.0",
+            "fileVersion": "4.8.0.0"
+          }
+        }
+      },
       "Microsoft.IdentityModel.Abstractions/8.14.0": {
         "runtime": {
           "lib/net9.0/Microsoft.IdentityModel.Abstractions.dll": {
@@ -660,7 +679,8 @@
           "FluentValidation.DependencyInjectionExtensions": "12.1.1",
           "Mapster": "10.1.0-pre02",
           "MediatR": "14.2.0",
-          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.12"
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.12",
+          "Microsoft.FeatureManagement.AspNetCore": "4.8.0"
         },
         "runtime": {
           "BuildingBlocks.dll": {
@@ -851,6 +871,20 @@
       "sha512": "sha512-rDPQVTxh/zMTDF7wHlRqL/jjZbwjAP6315ydBxj51pZW7qkAwGwjoSiMutxYI91xmOE3ZXjAGHbYRqzyJV7Urw==",
       "path": "microsoft.extensions.dependencymodel/10.0.12",
       "hashPath": "microsoft.extensions.dependencymodel.10.0.12.nupkg.sha512"
+    },
+    "Microsoft.FeatureManagement/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p1dzpXano+DTet2/hQGb+J91QonETabPYmO5BdqpsWOPq2C3WsWbm1BICTNlWqL81EVGrRrjpQh9mRNX55ZKmQ==",
+      "path": "microsoft.featuremanagement/4.8.0",
+      "hashPath": "microsoft.featuremanagement.4.8.0.nupkg.sha512"
+    },
+    "Microsoft.FeatureManagement.AspNetCore/4.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LBKVCjgNvJYtIiKb1IoXyuyzpZPmfVxnlDB0ByZ774EB1hNQLQlMQ9juZpJ3fRgEYodYs7aa7WKVvWshHx1CbQ==",
+      "path": "microsoft.featuremanagement.aspnetcore/4.8.0",
+      "hashPath": "microsoft.featuremanagement.aspnetcore.4.8.0.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Abstractions/8.14.0": {
       "type": "package",
