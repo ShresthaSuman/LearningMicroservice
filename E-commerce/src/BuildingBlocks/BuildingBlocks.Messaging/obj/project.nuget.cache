@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "oId4zIgqNVs=",
+  "success": true,
+  "projectFilePath": "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj",
+  "expectedPackageFiles": [
+    "/Users/shrestha/.nuget/packages/masstransit/8.5.12-develop.2445/masstransit.8.5.12-develop.2445.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/masstransit.abstractions/8.5.12-develop.2445/masstransit.abstractions.8.5.12-develop.2445.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/masstransit.rabbitmq/8.5.12-develop.2445/masstransit.rabbitmq.8.5.12-develop.2445.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.configuration.abstractions/10.0.0/microsoft.extensions.configuration.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.diagnostics.abstractions/10.0.0/microsoft.extensions.diagnostics.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.diagnostics.healthchecks/10.0.0/microsoft.extensions.diagnostics.healthchecks.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.diagnostics.healthchecks.abstractions/10.0.0/microsoft.extensions.diagnostics.healthchecks.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.fileproviders.abstractions/10.0.0/microsoft.extensions.fileproviders.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.hosting.abstractions/10.0.0/microsoft.extensions.hosting.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.0/microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.options/10.0.0/microsoft.extensions.options.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/rabbitmq.client/7.2.2/rabbitmq.client.7.2.2.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/system.threading.ratelimiting/8.0.0/system.threading.ratelimiting.8.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

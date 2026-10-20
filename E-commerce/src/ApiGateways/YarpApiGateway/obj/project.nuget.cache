@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "VkAiqcAK6Ro=",
+  "success": true,
+  "projectFilePath": "/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/ApiGateways/YarpApiGateway/YarpApiGateway.csproj",
+  "expectedPackageFiles": [
+    "/Users/shrestha/.nuget/packages/system.io.hashing/8.0.0/system.io.hashing.8.0.0.nupkg.sha512",
+    "/Users/shrestha/.nuget/packages/yarp.reverseproxy/2.3.0/yarp.reverseproxy.2.3.0.nupkg.sha512"
+  ],
+  "logs": []
+}

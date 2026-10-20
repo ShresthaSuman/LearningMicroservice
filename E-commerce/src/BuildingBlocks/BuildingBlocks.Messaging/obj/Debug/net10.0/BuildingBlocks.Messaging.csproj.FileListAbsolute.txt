@@ -1,0 +1,13 @@
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net10.0/BuildingBlocks.Messaging.deps.json
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net10.0/BuildingBlocks.Messaging.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/bin/Debug/net10.0/BuildingBlocks.Messaging.pdb
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.csproj.AssemblyReference.cache
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.GeneratedMSBuildEditorConfig.editorconfig
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.AssemblyInfoInputs.cache
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.AssemblyInfo.cs
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.csproj.CoreCompileInputs.cache
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.sourcelink.json
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/refint/BuildingBlocks.Messaging.dll
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/BuildingBlocks.Messaging.pdb
+/Users/shrestha/RiderProjects/LearningMicroservice/E-commerce/src/BuildingBlocks/BuildingBlocks.Messaging/obj/Debug/net10.0/ref/BuildingBlocks.Messaging.dll
