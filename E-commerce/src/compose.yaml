@@ -106,10 +106,15 @@
       ConnectionStrings__Database: Host=basket-db;Port=5432;Database=BasketDb;Username=postgres;Password=postgres;Include Error Detail=true
       ConnectionStrings__Redis: distributedcache-redis:6379
       GrpcSettings__DiscountUrl: https://discount-gRPC:8081
+      MessageBroker__Host: amqp://ecommerce-mq:5672
+      MessageBroker__UserName: guest
+      MessageBroker__Password: guest
     depends_on:
       - basket-db
       - distributedcache-redis
       - discount-gRPC
+      - messagebroker
+      
     ports:
       - "6001:8080"
       - "6061:8081"
@@ -139,8 +144,34 @@
       - ${HOME}/.aspnet/https:/home/app/.aspnet/https:ro
     restart: always
     
-  
+  ordering.api:
+#    image: ordering-api
+    build:
+      context: .
+      dockerfile: Services/Ordering/Ordering.API/Dockerfile
+    container_name: ordering-api
+    environment:
+       ASPNETCORE_ENVIRONMENT: Development
+       ASPNETCORE_HTTP_PORTS: 8080
+       ASPNETCORE_HTTPS_PORTS: 8081
+       ASPNETCORE_Kestrel__Certificates__Default__Path: /home/app/.aspnet/https/ecommerce-dev.pfx
+       ASPNETCORE_Kestrel__Certificates__Default__Password: basket-dev-password
+       ConnectionStrings__Database: "Server=order-db;Database=OrderDb;User Id=sa;Password=admin1234$$#;Encrypt=False;TrustServerCertificate=True"
+       MessageBroker__Host: amqp://ecommerce-mq:5672
+       MessageBroker__UserName: guest
+       MessageBroker__Password: guest
+       FeatureManagement__OrderFulfillment: false
+    depends_on:
+      - order-db
+      - messagebroker
+    ports:
+      - "6003:8080"
+      - "6063:8081"
+    volumes:
+      - ${APPDATA:-~/.microsoft}/usersecrets:/home/app/.microsoft/usersecrets:ro
+      - ${HOME}/.aspnet/https:/home/app/.aspnet/https:ro
+ 
 volumes:
     postgres_catalog:
     postgres_basket:
-    orderdb_data:
+    orderdb_data:  

@@ -9,7 +9,7 @@ public static  class Extension
 {
     public static IServiceCollection AddMessageBroker(this IServiceCollection services, IConfiguration configuration, Assembly? assembly=null)
     {
-        //Implement RabbitMQ masstransit configuration
+        //Implement RabbitMQ mass transit configuration
         services.AddMassTransit(config =>
         {
             config.SetKebabCaseEndpointNameFormatter();

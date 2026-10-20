@@ -9,6 +9,7 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Services/Basket/BasketAPI/BasketAPI/BasketAPI.csproj", "Services/Basket/BasketAPI/BasketAPI/"]
 COPY ["BuildingBlocks/BuildingBlocks/BuildingBlocks.csproj", "BuildingBlocks/BuildingBlocks/"]
+COPY ["BuildingBlocks/BuildingBlocks.Messaging/BuildingBlocks.Messaging.csproj", "BuildingBlocks/BuildingBlocks.Messaging/"]
 RUN dotnet restore "Services/Basket/BasketAPI/BasketAPI/BasketAPI.csproj"
 COPY . .
 WORKDIR "/src/Services/Basket/BasketAPI/BasketAPI"
